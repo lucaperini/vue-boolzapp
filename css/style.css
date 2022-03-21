@@ -13,33 +13,221 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.container {
+ul {
+    list-style: none;
+    height: 512px;
+    overflow: auto;
+}
+
+.container-fluid {
     height: 100vh;
-    background: linear-gradient(green 10Vh, lightgrey 0px, lightgrey 100%);
+    background: linear-gradient(#009688 15Vh, lightgrey 0px, lightgrey 100%);
+    
     
 }
 
 .main-content {
     width: 80%;
     margin: 0 auto;
-    background-color: grey;
-    max-height: 850px;
-    height: 800px;
+    
+    
+    height: 850px;
     
 }
 
+.main-content .main-left, .main-content .main-right {
+    float: left;
+    height: 100%;
+}
+
 .main-left {
-    width: 40%;
+    width: 35%;
     background-color: #dedede;
-    border-right: 1px solid black;
-    float:left;
-    height:100%;
+    
+    
 }
 
 .main-right {
-    width: 60%;
-    background-color: cornflowerblue;
-    border-right: 1px solid black;
-    float:left;
-    height:100%
+    width: 65%;
+    background-image: url(../img/mine.jpg);
+    object-fit:contain;
+
+    
 }
+
+.user-section {
+    display:flex;
+    align-items: center;
+    
+}
+
+.user-item .user-avatar{
+    height: 80px;
+    vertical-align: middle;
+    display: inline-block;
+    padding:10px;
+}
+
+.user-item .user-avatar img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user-item p {
+    display: inline-block;
+}
+
+.user-buttons{
+    margin-right:1rem;
+    font-size:1.6rem;
+    color: #b1b1b1;
+}
+
+.user-notification {
+    height: 80px;
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
+    
+    padding: 15px;
+    gap:10px;
+}
+
+.user-notification i{
+    font-size: 1.4rem;
+    line-height:1.3rem;
+    background-color: #F2FBFF;
+    text-align: center;
+    border-radius: 50%;
+    padding: 15px 10px;
+    color: #8edafc;
+    padding:12px 10px;
+}
+
+.user-notification .small {
+    line-height: .8rem;
+    margin-top:10px;
+    }
+
+.user-notification .text-link {
+    font-size: .8rem;
+    text-decoration: underline;
+    color: grey;
+    line-height: .2rem;
+}
+
+.user-searchbar {
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: .8rem;
+    color: #b1b1b1;
+    
+}
+
+.user-searchbar .search-ico {
+    background-color: #fff;
+    padding:9px 1rem;
+    border: 1px solid lightgrey;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius:10px;
+    color: #b1b1b1;
+}
+  
+  
+.user-searchbar input {
+    width:100%;
+    padding: 6px;
+    border: 1px solid lightgrey;
+    border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px;
+}
+
+.contacts-list {
+    background-color: #fff;
+}
+
+.contacts-list ul li {
+    height: 80px;
+    display: flex;
+    justify-content:space-between;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.contacts-list ul li{
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.contacts-list ul li.selected, .contacts-list ul li:hover  {
+    background-color: #e9ebeb;
+    ;
+}
+
+.contacts-list ul li img {
+    height: 60px;
+    border-radius: 50%;
+    
+}
+
+.contact-list-friend {
+    display: flex;
+    padding:0;
+}
+
+.contact-info {
+    padding-left: 10px;
+}
+
+.contact-name {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.text-chat-excerpt, .message-time {
+    font-size: .8rem;
+    color: lightgrey;
+}
+
+.message-time  {
+    padding: 10px;
+    align-self: flex-start;
+}
+
+.main-right .active-chat {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #EBEBEB;
+}
+
+.active-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.active-contact img {
+    height:50px;
+    align-items:center;
+    border-radius:50%;
+    gap:10px;
+    margin-right:10px;
+}
+
+.active-contact-info{
+    font-size: .8rem;
+    color: #6A7275;
+}
+
+.active-chat i {
+    font-size: 1.6rem;
+    color: lightgray;
+    padding: 15px;
+    cursor: pointer;
+    align-items:center;
+  }
+

@@ -25,56 +25,126 @@
 </head>
 <body>
 <div id="app">
-    <div class="container"></div>
-        <main class="main-content clearfix">
+    <div class="container-fluid">
+        <main class="main-content pt-3 clearfix">
             <section class="main-left">
-                <div class="user-section">
+                <div class="user-section dflex justify-content-between">
                     <div class="user-item">
-                        <img src="" alt="">
-                        <p>User Name</p>
+                        <div class="user-avatar">
+                            <img src="img/avatar_1.jpg" alt="Michele">
+                        </div>
+                        <p>Luca</p>
                     </div>
                     <div class="user-buttons">
-                        <button></button>
-                        <button></button>
-                        <button></button>
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
                 <div class="user-notification">
                     <i class="fas fa-bell-slash"></i>
                     <div class="text-notification">
-                        <p>Ricevi notifiche di nuovi messaggi</p>
-                        <p>Attiva notifiche desktop</p>
+                        <p class="small">Ricevi notifiche di nuovi messaggi</p>
+                        <p class="text-link">Attiva notifiche desktop</p>
                     </div>
                 </div>
                 <div class="user-searchbar">
-                    <i class="fas fa-search"></i>
+                    <i class="search-ico dflex align-items-center fas fa-search"></i>
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="contacts-list">
                     <div class="contacts-list-content">
                         <ul>
                             <li>
-                                <div class="contact-list-friend">
-                                    <img src="" alt="">
+                                <div class="contact-list-friend selected">
+                                    <img src="img/avatar_1.jpg" alt="michele">
                                     <div class="contact-info">
                                         <div class="contact-name">
-                                            <p></p>
+                                            <p>Michele</p>
                                         </div>
                                         <div class="text-chat-excerpt">
-                                            <p>Ciao come stai</p>
+                                            <p>Ultimo messaggio inviato</p>
                                         </div>
                                     </div>
                                 </div>
                             <div class="message-time">
-                                15/02/2022
+                                12:00
                             </div>
                         </li>
+                        <li>
+                            <div class="contact-list-friend">
+                                <img src="img/avatar_1.jpg" alt="michele">
+                                <div class="contact-info">
+                                    <div class="contact-name">
+                                        <p>Michele</p>
+                                    </div>
+                                    <div class="text-chat-excerpt">
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="message-time">
+                            12:00
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-list-friend mt-2">
+                            <img src="img/avatar_1.jpg" alt="michele">
+                            <div class="contact-info">
+                                <div class="contact-name">
+                                    <p>Michele</p>
+                                </div>
+                                <div class="text-chat-excerpt">
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="message-time">
+                        12:00
+                    </div>
+                </li>
+                <li>
+                    <div class="contact-list-friend">
+                        <img src="img/avatar_1.jpg" alt="michele">
+                        <div class="contact-info">
+                            <div class="contact-name">
+                                <p>Michele</p>
+                            </div>
+                            <div class="text-chat-excerpt">
+                                <p>Ultimo messaggio inviato</p>
+                            </div>
+                        </div>
+                    </div>
+                <div class="message-time">
+                    12:00
+                </div>
+            </li>
                     </ul>
                 </div>
             </div>
         </section>
-        <section class="main-right"></section>
-    </main>
+        <section class="main-right">
+            <div class="active-chat">
+                <div class="active-contact">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <div class="active-contact-info">
+                        <div class="contact-name">
+                            Michele
+                        </div>
+                    <div class="last-seen">
+                      Ultimo accesso oggi alle 12:00
+                    </div>
+                </div>
+            </div>
+                <div class="active-chat-buttons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div>
 </div>
 
 
