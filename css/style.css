@@ -15,7 +15,7 @@ body {
 
 .container {
     height: 100vh;
-    background: linear-gradient(green 15Vh, blue 0px, green 100%);
+    background: linear-gradient(green 10Vh, lightgrey 0px, lightgrey 100%);
     
 }
 
@@ -28,20 +28,18 @@ body {
     
 }
 
-
-
 .main-left {
-  width: 40%;
-  background-color: #dedede;
-  border-right: 1px solid black;
-  float:left;
-  height:100%;
+    width: 40%;
+    background-color: #dedede;
+    border-right: 1px solid black;
+    float:left;
+    height:100%;
 }
 
 .main-right {
-  width: 60%;
-  background-color: cornflowerblue;
-  border-right: 1px solid black;
-  float:left;
-  height:100%
+    width: 60%;
+    background-color: cornflowerblue;
+    border-right: 1px solid black;
+    float:left;
+    height:100%
 }
