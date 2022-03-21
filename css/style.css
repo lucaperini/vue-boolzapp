@@ -29,9 +29,8 @@ ul {
 .main-content {
     width: 80%;
     margin: 0 auto;
-    
-    
     height: 850px;
+    padding-top:30px;
     
 }
 
@@ -88,7 +87,6 @@ ul {
     background-color: #8edafc;
     display: flex;
     align-items: center;
-    
     padding: 15px;
     gap:10px;
 }
@@ -96,7 +94,7 @@ ul {
 .user-notification i{
     font-size: 1.4rem;
     line-height:1.3rem;
-    background-color: #F2FBFF;
+    background-color: #f2f2f2;
     text-align: center;
     border-radius: 50%;
     padding: 15px 10px;
@@ -229,5 +227,5 @@ ul {
     padding: 15px;
     cursor: pointer;
     align-items:center;
-  }
+}
 
