@@ -1,9 +1,10 @@
 const app = new Vue({
 
     el: '#app',
+    
 
     data: {
-        activeElement : 0,
+        activeElement: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -166,9 +167,7 @@ const app = new Vue({
                     }
                 ],
             }
-            
-        ]
+        ],
     }
-    }
-)
+});
 
