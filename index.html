@@ -55,87 +55,42 @@
                 <div class="contacts-list">
                     <div class="contacts-list-content">
                         <ul>
-                            <li>
-                                <div class="contact-list-friend selected">
-                                    <img src="img/avatar_1.jpg" alt="michele">
+                            <li v-for="(element, index) in contacts"
+                            @click="activeElement === index"
+                            :class="(activeElement === index) ? 'selected':''">
+                                <div class="contact-list-friend">
+                                    <div>
+                                        <img :src="element.avatar" alt="">
+                                    </div>
                                     <div class="contact-info">
                                         <div class="contact-name">
-                                            <p>Michele</p>
+                                            <p>{{element.name}}</p>
                                         </div>
                                         <div class="text-chat-excerpt">
                                             <p>Ultimo messaggio inviato</p>
                                         </div>
                                     </div>
                                 </div>
-                            <div class="message-time">
-                                12:00
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-list-friend">
-                                <img src="img/avatar_1.jpg" alt="michele">
-                                <div class="contact-info">
-                                    <div class="contact-name">
-                                        <p>Michele</p>
-                                    </div>
-                                    <div class="text-chat-excerpt">
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
+                                <div class="message-time">
+                                    12:00
                                 </div>
-                            </div>
-                        <div class="message-time">
-                            12:00
-                        </div>
-                    </li>
-                    <li>
-                        <div class="contact-list-friend mt-2">
-                            <img src="img/avatar_1.jpg" alt="michele">
-                            <div class="contact-info">
-                                <div class="contact-name">
-                                    <p>Michele</p>
-                                </div>
-                                <div class="text-chat-excerpt">
-                                    <p>Ultimo messaggio inviato</p>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="message-time">
-                        12:00
+                            </li>
+                        </ul>
                     </div>
-                </li>
-                <li>
-                    <div class="contact-list-friend">
-                        <img src="img/avatar_1.jpg" alt="michele">
-                        <div class="contact-info">
-                            <div class="contact-name">
-                                <p>Michele</p>
-                            </div>
-                            <div class="text-chat-excerpt">
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                <div class="message-time">
-                    12:00
                 </div>
-            </li>
-            
-        </ul>
-    </div>
-    </div>
-        </section>
+            </section>
         <section class="main-right">
             <div class="active-chat">
                 <div class="active-contact">
-                    <img src="img/avatar_1.jpg" alt="">
+                    <img :src="contacts[activeElement].avatar" :alt="contacts[activeElement].name">
                     <div class="active-contact-info">
                         <div class="contact-name">
-                            Michele
+                            {{contacts[activeElement].name}}
                         </div>
-                    <div class="latest-access">
-                        Ultimo accesso oggi alle 12:00
+                        <div class="latest-access">
+                            Ultimo accesso oggi alle 12:00
+                        </div>
                     </div>
-                </div>
             </div>
                 <div class="active-chat-buttons">
                     <i class="fas fa-search"></i>
@@ -145,22 +100,10 @@
             </div>
             <div class="main-chat-area">
                 <ul>
-                    <li class="user-message">
-                        Hai portato a spasso il cane?
+                    <li v-for="element in contacts[activeElement].messages" :class="element.status">
+                        {{element.message}}
                         <div class="message-date">
                             15:30
-                        </div>
-                    </li>
-                    <li class="user-message">
-                        Ricordati di stendere i panni
-                        <div class="message-date">
-                            15:50
-                        </div>
-                    </li>
-                    <li class="contact-message">
-                        Tutto fatto!
-                        <div class="message-date">
-                            16:15
                         </div>
                     </li>
                 </ul>

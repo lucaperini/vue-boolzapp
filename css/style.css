@@ -44,6 +44,7 @@ ul {
     width: 35%;
     height: calc(100% - 80px);
     margin-bottom:0;
+    
 }
 
 .main-right {
@@ -83,12 +84,10 @@ ul {
     padding: 15px;
     cursor: pointer;
     justify-content:center;
-     
 }
 
 .user-buttons i{
-    
-    margin-right:20px;  
+margin-right:20px;  
 }
 
 .user-notification {
@@ -112,8 +111,7 @@ ul {
 
 .user-notification .small {
     line-height: 1.5rem;
-    
-    }
+}
 
 .user-notification .text-link {
     font-size: .8rem;
@@ -151,7 +149,6 @@ ul {
     border-bottom-right-radius:10px;
 }
 
-
 .contacts-list{
     background-color:white;
 }
@@ -159,6 +156,7 @@ ul {
 .contacts-list ul {
     justify-content:space-between;
     width:100%;
+    overflow-y: auto;
 }
 
 .contacts-list ul li {
@@ -271,13 +269,13 @@ ul {
     color: grey;
 }
 
-li.user-message{
+li.sent{
     background-color: lightgreen;
     margin-left: auto;
     margin-right: 10%;
 }
 
-li.contact-message {
+li.received {
     background-color: #fff;
     margin-right: auto;
     margin-left: 10%;
