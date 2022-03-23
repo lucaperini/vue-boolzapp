@@ -18,7 +18,7 @@ ul {
     list-style: none;
     height: 500px;
     overflow-y:auto;
-    padding:0
+    padding:0;
     
 }
 
@@ -46,6 +46,10 @@ li.received {
     padding-top:30px;
 }
 
+.main-chat-area{
+    padding-bottom: 32px;
+}
+
 .main-content .main-left, .main-content .main-right {
     float: left;
     height: 100%;
@@ -55,12 +59,15 @@ li.received {
     width: 35%;
     height: calc(100% - 80px - 80px -20px);
     margin-bottom:0;
+    padding:0;
 }
 
 .main-right {
     width: 65%;
     height: calc(100% - 180px);
     background-image: url(../img/mine.jpg);
+    margin-bottom:0;
+    
     
 }
 
