@@ -6,6 +6,8 @@ const app = new Vue({
     data: {
         activeElement: 0,
         newChat:'',
+        searchContact:'',
+        
         
         contacts: [
             {
@@ -174,7 +176,7 @@ const app = new Vue({
     methods: {
         addMessage(){
             const newMessage = {
-                date: '10/01/2020 15:51:00',
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: this.newChat,
                 status: 'sent',
             }
@@ -183,13 +185,24 @@ const app = new Vue({
                 this.newChat = "";
                 setTimeout(() =>{
                     const contactAnswer = {
-                        date: '10/01/2020 15:51:00',
-                        message: 'Ciao Ciao',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        message: 'E sticazzi!',
                         status: 'received',
                     }
                     this.contacts[this.activeElement].messages.push(contactAnswer);
-
                 }, 1000)
+            };
+        },
+        
+        filterSearch(){
+            for (const element of this.contacts) {
+                if (!element.name.toLowerCase().includes(this.searchContact.toLowerCase())){
+                    element.visible=false;
+                    
+                }
+                if (this.searchContact==='') {
+                    element.visible=true;
+                }
             }
         }
     },

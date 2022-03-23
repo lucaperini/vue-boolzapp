@@ -33,7 +33,7 @@
                     <div class="user-section dflex justify-content-between">
                         <div class="user-item">
                             <div class="user-avatar">
-                                <img src="img/avatar_1.jpg" alt="Michele">
+                                <img src="img/avatar_1.jpg" alt="Luca">
                             </div>
                             <p>Luca</p>
                         </div>
@@ -52,17 +52,16 @@
                     </div>
                     <div class="user-searchbar">
                         <i class="search-ico dflex align-items-center fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="searchContact" @keyup="filterSearch()" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="contacts-list">
                         <div class="contacts-list-content">
                             <ul>
                                 <li v-for="(element, index) in contacts" @click="activeElement = index"
-                                    :class="{selected : activeElement === index}">
+                                    :class="{selected : activeElement === index}"
+                                    v-if="(element.visible === true)">
                                     <div class="contact-list-friend">
-                                        <div>
-                                            <img :src="element.avatar" alt="">
-                                        </div>
+                                        <img :src="element.avatar" alt="">
                                         <div class="contact-info">
                                             <div class="contact-name">
                                                 <p>{{element.name}}</p>
@@ -73,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="message-time">
-                                        12:00
+                                        <p>{{element.date}}</p>
                                     </div>
                                 </li>
                             </ul>
@@ -89,7 +88,7 @@
                                     {{contacts[activeElement].name}}
                                 </div>
                                 <div class="latest-access">
-                                    Ultimo accesso oggi alle 12:00
+                                    <p>Ultimo accesso: oggi alle 12</p>
                                 </div>
                             </div>
                         </div>
@@ -100,11 +99,11 @@
                         </div>
                     </div>
                     <div class="main-chat-area">
-                        <ul>
+                        <ul class="message-list">
                             <li v-for="element in contacts[activeElement].messages" :class="element.status">
                                 {{element.message}}
                                 <div class="message-date">
-                                    15:30
+                                    <p>{{element.date}}</p>
                                 </div>
                             </li>
                         </ul>
@@ -118,6 +117,11 @@
             </main>
         </div>
     </div>
+    
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/customParseFormat.js"></script>
+    
+    
     <script src="js/main.js"></script>
 </body>
 </html>
