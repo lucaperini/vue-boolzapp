@@ -4,9 +4,11 @@ const app = new Vue({
     
 
     data: {
+        
         activeElement: 0,
         newChat:'',
         searchContact:'',
+        messageSubmenu: -1,
         
         
         contacts: [
@@ -186,7 +188,7 @@ const app = new Vue({
                 setTimeout(() =>{
                     const contactAnswer = {
                         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                        message: 'E sticazzi!',
+                        message: 'Ciao ti chiamo dopo!',
                         status: 'received',
                     }
                     this.contacts[this.activeElement].messages.push(contactAnswer);
@@ -205,6 +207,14 @@ const app = new Vue({
                 }
             }
         }
+    },
+    
+    showSubmenu(index) {
+        this.messageSubmenu === -1 ? this.messageSubmenu = index : this.messageSubmenu = -1;
+    },
+
+    deleteMessage(index) {
+    this.contacts[this.activeElement].messages.splice(index, 1);
     },
 });
 

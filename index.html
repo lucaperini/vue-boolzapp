@@ -57,9 +57,12 @@
                     <div class="contacts-list">
                         <div class="contacts-list-content">
                             <ul>
-                                <li v-for="(element, index) in contacts" @click="activeElement = index"
+                                <li v-for="(element, index) in contacts" 
+                                    @click="activeElement = index, 
+                                    messageSubmenu = -1"
                                     :class="{selected : activeElement === index}"
-                                    v-if="(element.visible === true)">
+                                    v-if="(element.visible === true)"
+                                    >
                                     <div class="contact-list-friend">
                                         <img :src="element.avatar" alt="">
                                         <div class="contact-info">
@@ -72,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="message-time">
-                                        <p>{{element.date}}</p>
+                                        <p>{{element.messages[element.messages.length-1].date}}</p>
                                     </div>
                                 </li>
                             </ul>
@@ -88,7 +91,7 @@
                                     {{contacts[activeElement].name}}
                                 </div>
                                 <div class="latest-access">
-                                    <p>Ultimo accesso: oggi alle 12</p>
+                                    <p>Ultimo accesso: {{contacts[activeElement].messages[contacts[activeElement].messages.length-1].date}}</p>
                                 </div>
                             </div>
                         </div>
@@ -104,6 +107,14 @@
                                 {{element.message}}
                                 <div class="message-date">
                                     <p>{{element.date}}</p>
+                                </div>
+                                <i @click="showSubmenu(index)"
+                                class="fas fa-chevron-down p-2"></i>
+                                <div class="submenu-content"
+                                    v-show="messageSubmenu === index">
+                                    <p>Info messaggio</p>
+                                    <p @click="deleteMessage(index),
+                                    showSubmenu(index)">Elimina messaggio</p>
                                 </div>
                             </li>
                         </ul>
