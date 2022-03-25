@@ -43,7 +43,7 @@ li.received {
 .main-content {
     width: 80%;
     margin: 0 auto;
-    padding-top:40px;
+    padding-top:30px;
     min-width: 1000px;
     height:90%;
 }
@@ -276,7 +276,7 @@ margin-right:20px;
     width: 30%;
     height: 45px;
     border-radius:1rem;
-    padding:20px 10px 40px 15px;
+    padding:20px 10px 27px 15px;
     font-size:.8rem;
     margin-top:2rem;
     
@@ -307,14 +307,15 @@ margin-right:20px;
 
 .submenu-content {
     background-color: #fff;
-    font-size: 1rem;
+    font-size: .8rem;
     width: 140px;
     height: 70px;
     position: absolute;
     top: 30px;
     right: 10px;
     text-align: center;
-    z-index: 3;
+    border: 1px solid lightgray;
+    z-index:10;
 }
 
 .submenu-content p {
@@ -323,7 +324,7 @@ margin-right:20px;
     cursor: pointer;
 }
 
-.subemnu-content p:hover {
+.submenu-content p:hover {
     color: black;
     background-color: #f5f5f5;
 }

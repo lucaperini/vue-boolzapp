@@ -11,6 +11,8 @@ const app = new Vue({
         messageSubmenu: -1,
         
         
+        
+        
         contacts: [
             {
                 name: 'Michele',
@@ -173,6 +175,7 @@ const app = new Vue({
                     }
                 ],
             }
+            
         ]
     }, 
     methods: {
@@ -197,24 +200,28 @@ const app = new Vue({
         },
         
         filterSearch(){
+            const self = this;
+            
+            
             for (const element of this.contacts) {
                 if (!element.name.toLowerCase().includes(this.searchContact.toLowerCase())){
                     element.visible=false;
+                    
                     
                 }
                 if (this.searchContact==='') {
                     element.visible=true;
                 }
             }
-        }
-    },
+        },
+        
+        showSubmenu(index) {
+            this.messageSubmenu === -1 ? this.messageSubmenu = index : this.messageSubmenu = -1;
+        },
     
-    showSubmenu(index) {
-        this.messageSubmenu === -1 ? this.messageSubmenu = index : this.messageSubmenu = -1;
-    },
-
-    deleteMessage(index) {
-    this.contacts[this.activeElement].messages.splice(index, 1);
-    },
+        deleteMessage(index) {
+        this.contacts[this.activeElement].messages.splice(index, 1);
+        },
+    }
 });
 

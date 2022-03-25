@@ -58,8 +58,8 @@
                         <div class="contacts-list-content">
                             <ul>
                                 <li v-for="(element, index) in contacts" 
-                                    @click="activeElement = index, 
-                                    messageSubmenu = -1"
+                                    @click="(activeElement = index), 
+                                    (messageSubmenu = -1)"
                                     :class="{selected : activeElement === index}"
                                     v-if="(element.visible === true)"
                                     >
@@ -103,13 +103,13 @@
                     </div>
                     <div class="main-chat-area">
                         <ul class="message-list">
-                            <li v-for="element in contacts[activeElement].messages" :class="element.status">
+                            <li v-for="(element, index) in contacts[activeElement].messages" :class="element.status">
                                 {{element.message}}
                                 <div class="message-date">
                                     <p>{{element.date}}</p>
                                 </div>
                                 <i @click="showSubmenu(index)"
-                                class="fas fa-chevron-down p-2"></i>
+                                class="fas fa-chevron-down "></i>
                                 <div class="submenu-content"
                                     v-show="messageSubmenu === index">
                                     <p>Info messaggio</p>
