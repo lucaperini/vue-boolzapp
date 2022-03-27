@@ -43,7 +43,7 @@ li.received {
 .main-content {
     width: 80%;
     margin: 0 auto;
-    padding-top:30px;
+    padding-top:40px;
     min-width: 1000px;
     height:90%;
 }
@@ -273,7 +273,7 @@ margin-right:20px;
     position: relative;
     display: flex;
     align-items: center;
-    width: 30%;
+    width: 35%;
     height: 45px;
     border-radius:1rem;
     padding:20px 10px 27px 15px;
@@ -284,7 +284,7 @@ margin-right:20px;
 
 .main-chat-area ul li:hover .fa-chevron-down {
     display: block;
-  }
+}
 
 .main-chat-area ul li .fa-chevron-down {
     position: absolute;
@@ -293,7 +293,7 @@ margin-right:20px;
     color: #b1b1b1;
     cursor: pointer;
     display: none;
-  }
+}
 
 .message-date {
     position: absolute;
@@ -351,4 +351,27 @@ margin-right:20px;
     border: 1px solid #f5f5f5;
     border-radius: 5px;
     font-size:.8rem;
+}
+
+.no-contact{
+    font-size:.8rem;
+    color:white;
+    background-color: #009688;
+    padding: 10px;
+    width:40%;
+    border-radius:10px;
+    text-align:center;
+    margin-top:50px;
+    margin-left:40%;
+    transform:translateX(-40%);
+    
+}
+
+.no-contact-list{
+    font-size:.8rem;
+    font-weight:bold;
+    color:black;
+    text-align:center;
+    padding-top:1rem;
+    height:auto;
 }

@@ -52,11 +52,14 @@
                     </div>
                     <div class="user-searchbar">
                         <i class="search-ico dflex align-items-center fas fa-search"></i>
-                        <input v-model="searchContact" @keyup="filterSearch()" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="searchContact" @keyup="filterSearch(searchContact)" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="contacts-list">
                         <div class="contacts-list-content">
                             <ul>
+                                <div v-if="contacts.length === contactsNotFound.length">
+                                    <p class="no-contact-list">Non sono stati trovati contatti</p>
+                                </div>
                                 <li v-for="(element, index) in contacts" 
                                     @click="(activeElement = index), 
                                     (messageSubmenu = -1)"
@@ -75,11 +78,15 @@
                                         </div>
                                     </div>
                                     <div class="message-time">
-                                        <p>{{element.messages[element.messages.length-1].date}}</p>
+                                        <p>{{
+                                            lastMessageDate = showMessageDate(index)
+                                            }}</p>
                                     </div>
                                 </li>
                             </ul>
+                            
                         </div>
+                        
                     </div>
                 </section>
                 <section class="main-right">
@@ -91,7 +98,7 @@
                                     {{contacts[activeElement].name}}
                                 </div>
                                 <div class="latest-access">
-                                    <p>Ultimo accesso: {{contacts[activeElement].messages[contacts[activeElement].messages.length-1].date}}</p>
+                                    <p>Ultimo accesso: {{lastMessageDate = showMessageDate(activeElement)}}</p>
                                 </div>
                             </div>
                         </div>
@@ -103,14 +110,19 @@
                     </div>
                     <div class="main-chat-area">
                         <ul class="message-list">
+                            <div v-if="contacts[activeElement].messages.length === 0" class="d-flex flex-column">
+                                <p class="no-contact">Non ci sono messaggi con questo contatto</p>
+                            </div>
                             <li v-for="(element, index) in contacts[activeElement].messages" :class="element.status">
                                 {{element.message}}
+                                
                                 <div class="message-date">
                                     <p>{{element.date}}</p>
                                 </div>
+                                
                                 <i @click="showSubmenu(index)"
                                 class="fas fa-chevron-down "></i>
-                                <div class="submenu-content"
+                                <div class="submenu-content"    
                                     v-show="messageSubmenu === index">
                                     <p>Info messaggio</p>
                                     <p @click="deleteMessage(index),

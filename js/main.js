@@ -9,8 +9,8 @@ const app = new Vue({
         newChat:'',
         searchContact:'',
         messageSubmenu: -1,
-        
-        
+        lastMessageDate:'',
+        contactsNotFound: [],
         
         
         contacts: [
@@ -199,24 +199,36 @@ const app = new Vue({
             };
         },
         
-        filterSearch(){
+        filterSearch(contactSearch){
             const self = this;
+            self.contactsNotFound = [];
             
-            
-            for (const element of this.contacts) {
-                if (!element.name.toLowerCase().includes(this.searchContact.toLowerCase())){
-                    element.visible=false;
-                    
-                    
-                }
-                if (this.searchContact==='') {
+            self.contacts.forEach((element) => {
+                if (element.name.toLowerCase().startsWith(contactSearch.toLowerCase().trim())) {
                     element.visible=true;
+                } else {
+                    element.visible = false;
+                    self.contactsNotFound.push(element.name);
+                    
+                    
                 }
-            }
+                
+            });
+            console.table(self.contactsNotFound)
+            console.log(self.contacts.length)    
+            
         },
+
+        showMessageDate(index) {
+            let messageDate='';
+            if (this.contacts[index].messages.length > 0){
+                messageDate = this.contacts[index].messages[this.contacts[index].messages.length-1].date;
+            }
+            return messageDate;
+          },
         
         showSubmenu(index) {
-            this.messageSubmenu === -1 ? this.messageSubmenu = index : this.messageSubmenu = -1;
+            (this.messageSubmenu === -1) ? this.messageSubmenu = index : this.messageSubmenu = -1;
         },
     
         deleteMessage(index) {
